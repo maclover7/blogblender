@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :communities
+
   resources :networks
 
   # The priority is based upon order of creation: first created -> highest priority.

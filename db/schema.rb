@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003233548) do
+ActiveRecord::Schema.define(version: 20141003234127) do
+
+  create_table "communities", force: true do |t|
+    t.string   "name"
+    t.string   "domain"
+    t.string   "twitter_name"
+    t.string   "facebook_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "networks", force: true do |t|
     t.string   "slug"
