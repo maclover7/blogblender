@@ -27,6 +27,10 @@
     <%= f.label :facebook_url %><br>
     <%= f.text_field :facebook_url %>
   </div>
+  <div class="field">
+    <%= f.label :network_id %><br>
+    <%= f.collection_select :network_id, Network.order(:slug), :id, :slug, include_blank: true %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

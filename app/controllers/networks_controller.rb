@@ -22,7 +22,6 @@ class NetworksController < ApplicationController
   # POST /networks
   def create
     @network = Network.new(network_params)
-    
     if @network.save
       redirect_to @network, notice: 'Network was successfully created.'
     else
@@ -36,7 +35,7 @@ class NetworksController < ApplicationController
         redirect_to @network, notice: 'Network was successfully updated.'
       else
         render :edit
-      end
+    end
   end
 
   # DELETE /networks/1
@@ -57,4 +56,3 @@ class NetworksController < ApplicationController
     def network_params
       params.require(:network).permit(:slug, :domain)
     end
-end

@@ -32,11 +32,10 @@ class CommunitiesController < ApplicationController
 
   # PATCH/PUT /communities/1
   def update
-      if @community.update(community_params)
-        redirect_to @community, notice: 'Community was successfully updated.'
-      else
-        render :edit
-      end
+    if @community.update(community_params)
+      redirect_to @community, notice: 'Community was successfully updated.'
+    else
+      render :edit
     end
   end
 
@@ -44,7 +43,6 @@ class CommunitiesController < ApplicationController
   def destroy
     @community.destroy
       redirect_to communities_url, notice: 'Community was successfully destroyed.'
-    end
   end
 
 
@@ -58,4 +56,3 @@ class CommunitiesController < ApplicationController
     def community_params
       params.require(:community).permit(:name, :domain, :twitter_name, :facebook_url, :network_id)
     end
-end
