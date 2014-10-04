@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root 'entries#index'
+  
   scope '/admin' do
+    resources :networks
+    resources :communities
     resources :entry_types
   end
 
-  get 'tag/:tag', to: 'entries#index', as: :tag
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   resources :entries
 
-  resources :communities
-
-  resources :networks
+  get 'tag/:tag', to: 'entries#index', as: :tag
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
