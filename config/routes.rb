@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comments
+
   root 'entries#index'
   
   scope '/admin' do
