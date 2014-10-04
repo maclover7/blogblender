@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  devise_for :users
+  root 'entries#index'
   scope '/admin' do
     resources :entry_types
   end
