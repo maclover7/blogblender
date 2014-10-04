@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tag/:tag', to: 'entries#index', as: :tag
+
   resources :entries
 
   resources :communities

@@ -4,7 +4,11 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    if params[:tag]
+      @entries = Entry.tagged_with(params[:tag])
+    else
+      @entries = Entry.all
+    end
   end
 
   # GET /entries/1
@@ -69,6 +73,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:title, :body, :community_id)
+      params.require(:entry).permit(:title, :body, :community_id, :tag_list)
     end
 end

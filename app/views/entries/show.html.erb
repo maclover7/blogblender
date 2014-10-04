@@ -15,5 +15,11 @@
   <%= @entry.community_id %>
 </p>
 
+<p>
+  <strong>Tags:</strong>
+  <%= raw @entry.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
+</p>
+
+
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>

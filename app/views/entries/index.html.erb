@@ -6,6 +6,7 @@
       <th>Title</th>
       <th>Body</th>
       <th>Community id</th>
+      <th>Tags</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
         <td><%= entry.title %></td>
         <td><%= entry.body %></td>
         <td><%= entry.community_id %></td>
+        <td><%= raw entry.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></td>
         <td><%= link_to 'Show', entry %></td>
         <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
         <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
