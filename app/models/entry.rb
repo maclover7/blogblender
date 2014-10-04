@@ -1,6 +1,5 @@
 class Entry < ActiveRecord::Base
 	belongs_to :community
-	belongs_to :entry_type
 	belongs_to :user
 
 	# Tagging Features

@@ -19,7 +19,8 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = current_user.entries.build #Entry.new
+    @entry = current_user.entries.build(params[:entry_type]) #Entry.new
+
   end
 
   # GET /entries/1/edit
@@ -74,6 +75,6 @@ class EntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def entry_params
-      params.require(:entry).permit(:title, :body, :entry_type_id, :community_id, :tag_list)
+      params.require(:entry).permit(:title, :body, :entry_type, :community_id, :tag_list)
     end
 end
