@@ -1,6 +1,8 @@
 class Entry < ActiveRecord::Base
 	belongs_to :community
 
+	belongs_to :entry_type
+
 	# Tagging Features
 		has_many :taggings
 	  	has_many :tags, through: :taggings
