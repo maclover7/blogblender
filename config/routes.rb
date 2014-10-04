@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  
+  scope '/admin' do
+    resources :entry_types
+  end
+
   get 'tag/:tag', to: 'entries#index', as: :tag
 
   resources :entries
