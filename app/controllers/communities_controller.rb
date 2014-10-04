@@ -22,20 +22,19 @@ class CommunitiesController < ApplicationController
   # POST /communities
   def create
     @community = Community.new(community_params)
-      if @community.save
-        redirect_to @community, notice: 'Community was successfully created.'
-      else
-        render :new
-      end
+    if @community.save
+      redirect_to @community, notice: 'Community was successfully created.'
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /communities/1
   def update
     if @community.update(community_params)
-      redirect_to @community, notice: 'Community was successfully updated.'
-    else
-      render :edit
+        redirect_to @community, notice: 'Community was successfully updated.'
+      else
+        render :edit
     end
   end
 
@@ -43,12 +42,13 @@ class CommunitiesController < ApplicationController
   def destroy
     @community.destroy
       redirect_to communities_url, notice: 'Community was successfully destroyed.'
+    end
   end
 
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_community
+    def set_network
       @community = Community.find(params[:id])
     end
 

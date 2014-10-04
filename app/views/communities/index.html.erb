@@ -7,6 +7,7 @@
       <th>Domain</th>
       <th>Twitter name</th>
       <th>Facebook url</th>
+      <th>Network id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +16,10 @@
     <% @communities.each do |community| %>
       <tr>
         <td><%= community.name %></td>
-        <td><%= community.domain %></td>
+        <td><%= community.domain %><%=raw %(#{link_to(community.domain, community)}) %></td>
         <td><%= community.twitter_name %></td>
         <td><%= community.facebook_url %></td>
+        <td><%= community.network_id %></td>
         <td><%= link_to 'Show', community %></td>
         <td><%= link_to 'Edit', edit_community_path(community) %></td>
         <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
