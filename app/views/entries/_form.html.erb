@@ -21,11 +21,8 @@
   </div>
 
   <%= hidden_field_tag :entry_type_id, params[:entry_type_id] %>
+  <%= hidden_field_tag :community_id, params[:community_id] %>
   
-  <div class="field">
-    <%= f.label :community_id %><br>
-    <%= f.collection_select :community_id, Community.order(:name), :id, :name, include_blank: true %>
-  </div>
   <div class="field">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />
     <%= f.text_field :tag_list %>

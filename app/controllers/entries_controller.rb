@@ -18,7 +18,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = Entry.new(params[:entry_type_id])
+    @entry = Entry.new
   end
 
   # GET /entries/1/edit
