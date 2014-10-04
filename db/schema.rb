@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004132852) do
+ActiveRecord::Schema.define(version: 20141004134101) do
 
   create_table "communities", force: true do |t|
     t.string   "name"
@@ -32,10 +32,12 @@ ActiveRecord::Schema.define(version: 20141004132852) do
     t.datetime "updated_at"
     t.integer  "community_id"
     t.integer  "entry_type_id"
+    t.integer  "user_id"
   end
 
   add_index "entries", ["community_id"], name: "index_entries_on_community_id"
   add_index "entries", ["entry_type_id"], name: "index_entries_on_entry_type_id"
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
 
   create_table "entry_types", force: true do |t|
     t.string   "name"
