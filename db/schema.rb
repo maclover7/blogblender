@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141003235611) do
+ActiveRecord::Schema.define(version: 20141003235819) do
 
   create_table "communities", force: true do |t|
     t.string   "name"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 20141003235611) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "community_id"
   end
+
+  add_index "entries", ["community_id"], name: "index_entries_on_community_id"
 
   create_table "networks", force: true do |t|
     t.string   "slug"
