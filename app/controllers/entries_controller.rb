@@ -19,7 +19,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-    @entry = current_user.entries.build(params[:entry_type]) #Entry.new
+    @entry = current_user.entries.build(entry_type: params[:entry_type]) #Entry.new
 
   end
 
@@ -30,7 +30,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.json
   def create
-    @entry = current_user.entries.build(entry_params) #Entry.new(entry_params)
+    @entry = current_user.entries.build(entry_params.merge(entry_type: params[:entry_type])) #Entry.new(entry_params)
 
     respond_to do |format|
       if @entry.save
