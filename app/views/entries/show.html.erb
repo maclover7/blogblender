@@ -30,6 +30,11 @@
   <%= raw @entry.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %>
 </p>
 
+<h2>Comments</h2>
+
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
+
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>

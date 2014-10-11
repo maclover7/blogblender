@@ -2,7 +2,7 @@ class Entry < ActiveRecord::Base
 	belongs_to :community
 	belongs_to :user
 
-	has_many :comments
+	has_many :comments, as: :commentable
 
 	# Tagging Features
 		has_many :taggings

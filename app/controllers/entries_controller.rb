@@ -13,7 +13,8 @@ class EntriesController < ApplicationController
 
   # GET /entries/1
   def show
-    @entry = Entry.find(params[:id])
+    @commentable = @entry
+    @comments = @commentable.comments
     @comment = Comment.new
   end
 

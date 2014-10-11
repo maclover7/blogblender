@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'entries#index'
   
   resources :entries do
+    resources :comments
   end
   
   get 'tag/:tag', to: 'entries#index', as: :tag
