@@ -13,6 +13,8 @@ class EntriesController < ApplicationController
 
   # GET /entries/1
   def show
+    @entry = Entry.find(params[:id])
+    @comment = Comment.new
   end
 
   # GET /entries/new
@@ -65,4 +67,3 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:title, :body, :entry_type, :community_id, :tag_list)
     end
-end

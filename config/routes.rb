@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :comments
-
   root 'entries#index'
   
-  resources :entries
-
+  resources :entries do
+  end
+  
   get 'tag/:tag', to: 'entries#index', as: :tag
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_up => 'register', :sign_out => 'logout'}
