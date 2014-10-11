@@ -3,7 +3,6 @@ class EntriesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /entries
-  # GET /entries.json
   def index
     if params[:tag]
       @entries = Entry.tagged_with(params[:tag])
@@ -13,7 +12,6 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/1
-  # GET /entries/1.json
   def show
   end
 
@@ -32,42 +30,28 @@ class EntriesController < ApplicationController
   end
 
   # POST /entries
-  # POST /entries.json
   def create
     @entry = current_user.entries.build(entry_params.merge(entry_type: params[:entry_type])) #Entry.new(entry_params)
-
-    respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
+        redirect_to @entry, notice: 'Entry was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
   def update
-    respond_to do |format|
       if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entry }
+        redirect_to @entry, notice: 'Entry was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
 
   # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
-      format.json { head :no_content }
+      redirect_to entries_url, notice: 'Entry was successfully destroyed.'
     end
   end
 
