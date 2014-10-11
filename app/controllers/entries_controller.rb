@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   def show
     @commentable = @entry
     @comments = @commentable.comments
-    @comment = Comment.new
+    @comment = @commentable.comments.new
   end
 
   # GET /entries/new

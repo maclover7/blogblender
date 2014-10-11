@@ -33,8 +33,15 @@
 <h2>Comments</h2>
 
 <%= render "comments/comments" %>
-<%= render "comments/form" %>
+
+<% if user_signed_in? %>
+  <%= render "comments/form" %>
+<% else %>
+  <h4><%= link_to "You must be signed in to comment", new_user_session_path %></h4>
+<% end %>
 
 
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>
+
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 

@@ -1,16 +1,18 @@
 class CommentsController < ApplicationController
 	before_filter :load_commentable
+  before_action :authenticate_user!
 
   def index
   	@comments = @commentable.comments
   end
 
   def new
-  	@comment = @commentable.comments.new
+  	@comment = @commentable.comments.build #@commentable.comments.new
+    @comment.user_id = current_user.id
   end
 
   def create
-    	@comment = @commentable.comments.new(comment_params)
+    	@comment = @commentable.comments.build(comment_params) #@commentable.comments.new(comment_params)
 		    if @comment.save
 		      redirect_to @commentable, notice: "Comment created."
 		    else
@@ -26,5 +28,5 @@ class CommentsController < ApplicationController
   	end
 
   	def comment_params
-    	params.require(:comment).permit(:content, :commentable_id, :commentable_type)
+    	params.require(:comment).permit(:content, :user_id, :commentable_id, :commentable_type)
   	end
