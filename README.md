@@ -1,5 +1,7 @@
 BlogBlender
 
+[ ![Codeship Status for maclover7/blogblender](https://codeship.io/projects/229fe470-33ed-0132-5c25-46e0e7c99d03/status?branch=master)](https://codeship.io/projects/40688)
+
 ```
 	======================================================================
 	======================================================= Blog Blender
