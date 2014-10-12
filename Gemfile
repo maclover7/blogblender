@@ -15,7 +15,6 @@ gem 'sqlite3'
 
 
 gem 'devise'
-gem 'ancestry'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
