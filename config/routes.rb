@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_up => 'register', :sign_out => 'logout'}
 
-  scope '/admin' do
+  namespace :admin do
     resources :networks
     resources :communities
   end
