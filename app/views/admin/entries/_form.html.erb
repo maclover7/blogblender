@@ -11,23 +11,26 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    <%= f.text_area :body, class: "form-control" %>
   </div>
 
   <%= hidden_field_tag :entry_type, params[:entry_type] %>
-
+  <%= hidden_field_tag :community_id, params[:community_id] %>
   
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
+  <div class="form-group">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br>
+    <%= f.text_field :tag_list, class: "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

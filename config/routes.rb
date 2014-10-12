@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'entries#index'
   
-  resources :entries do
+  resources :entries, :except => [:new, :edit] do
     resources :comments
   end
   
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_up => 'register', :sign_out => 'logout'}
 
   namespace :admin do
+    resources :entries, :except => [:show, :index]
     resources :networks
     resources :communities
   end
