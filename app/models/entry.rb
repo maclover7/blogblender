@@ -7,7 +7,7 @@ class Entry < ActiveRecord::Base
   # Validations
   validates :title, presence: true
   validates :body, presence: true
-  validates :community_id, presence: true
+  #validates :community_id, presence: true
   validates :entry_type, presence: true
 
 	# Tagging Features

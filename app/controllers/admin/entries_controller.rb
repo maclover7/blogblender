@@ -1,12 +1,11 @@
 class Admin::EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
 
   # GET /entries
-  #def index
-      #@entries = Entry.all
-      #end
- #end
+  def index
+    @entries = Entry.all.order("created_at DESC")
+  end
 
   # GET /entries/new
   #def new

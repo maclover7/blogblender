@@ -13,8 +13,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'sqlite3'
 
-
 gem 'devise'
+gem 'bootstrap-sass'
+
+# Summernote Dependencies
+gem "font-awesome-rails"
+gem 'summernote-rails'
+gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

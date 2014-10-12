@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20141012152138) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "entry_id"
-    t.string   "ancestry"
   end
 
   add_index "comments", ["entry_id"], name: "index_comments_on_entry_id"

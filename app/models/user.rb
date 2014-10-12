@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   has_many :comments
   
   # Validations 
-  validates :name, presence: true
+  # validates :name, presence: true
 
 end

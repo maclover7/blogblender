@@ -19,14 +19,14 @@ class EntriesController < ApplicationController
   end
 
   # GET /entries/new
-  def new
-    if params[:entry_type] == 'article' or 'feature'
-      @entry = current_user.entries.build(entry_type: params[:entry_type]) #Entry.new
+  #def new
+    #if params[:entry_type] == 'article' or 'feature'
+      #@entry = current_user.entries.build(entry_type: params[:entry_type]) #Entry.new
 
-    else
-      render :file => 'public/404.html', :status => :not_found, :layout => false
-    end
-  end
+      #else
+      #render :file => 'public/404.html', :status => :not_found, :layout => false
+      #end
+  #end
 
   # GET /entries/1/edit
   def edit
