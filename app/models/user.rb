@@ -9,5 +9,7 @@ class User < ActiveRecord::Base
   
   # Validations 
   # validates :name, presence: true
+  
+  has_attached_file :profilepic, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 end

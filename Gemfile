@@ -15,6 +15,7 @@ gem 'sqlite3'
 
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'paperclip'
 
 # Summernote Dependencies
 gem "font-awesome-rails"
