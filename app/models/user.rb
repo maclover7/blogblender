@@ -6,5 +6,8 @@ class User < ActiveRecord::Base
   
   has_many :entries
   has_many :comments
+  
+  # Validations 
+  validates :name, presence: true
 
 end

@@ -3,6 +3,12 @@ class Entry < ActiveRecord::Base
 	belongs_to :user
 
 	has_many :comments
+  
+  # Validations
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :community_id, presence: true
+  validates :entry_type, presence: true
 
 	# Tagging Features
 		has_many :taggings
