@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @comments = @entry.comments.all
-    #@comment = @entry.comments.build
+    @comment = @entry.comments.build
   end
 
   # GET /entries/new
