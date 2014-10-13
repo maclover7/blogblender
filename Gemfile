@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+# Static Rails dependencies
 gem 'rails', '4.1.1'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -11,8 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
-gem 'sqlite3'
 
+# BlogBlender Dependencies
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip'
@@ -22,6 +22,13 @@ gem 'aws-sdk'
 gem "font-awesome-rails"
 gem 'summernote-rails'
 gem 'jquery-turbolinks'
+
+# Development Dependencies
+group :development do
+  gem "better_errors"
+  gem 'sqlite3'
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
