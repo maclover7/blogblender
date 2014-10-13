@@ -17,7 +17,6 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'public_activity'
 
 # Summernote Dependencies
 gem "font-awesome-rails"

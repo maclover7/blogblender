@@ -9,21 +9,16 @@ class CommentsController < ApplicationController
   end
 
   def create
-    def create
-      @comment = current_user.comments.build(comment_params)
-        #@comment.entry_id = @entry.id
-      @entry = Entry.find(@comment.entry_id)
-        #@entry = @comment.entries
-      
-      
-      
+    @comment = current_user.comments.build(comment_params)
+      #@comment.entry_id = @entry.id
+    @entry = Entry.find(@comment.entry_id)
+      #@entry = @comment.entries
       #@comment = @entry.comments.build(comment_params) #Comment.new(comment_params)
-		    if @comment.save
-		      redirect_to @entry, notice: "Comment created."
-        else
-		      render :new
-        end
-  		end
+		 if @comment.save
+       redirect_to @entry, notice: "Comment created."
+     else
+		    ender :new
+      end
     end
   end
 

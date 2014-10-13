@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'activities/index'
+
   root 'entries#index'
   
   resources :entries, :except => [:new, :edit] do
