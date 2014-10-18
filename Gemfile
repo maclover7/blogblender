@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 # Static Rails dependencies
 gem 'rails', '4.1.1'
